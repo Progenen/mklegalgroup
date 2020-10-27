@@ -1,0 +1,38 @@
+.ibg{
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.ibg .ibg-src{
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+//adaptiv font
+@mixin adaptiv-font($pcSize, $mobSize) {
+    $addSize: $pcSize - $mobSize;
+    $maxWidth: $maxWidth - 320;
+    font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+
+//px to percent converter(flex-basis)
+@mixin pxToPercentFlex($size) {     
+    $prePercentWidth: $container / 100px;
+    $percentWidth: $size / $prePercentWidth;
+    flex-basis: $percentWidth;
+}
+
+//px to percent converter(width)
+@mixin pxToPercentBlock($size) {    
+    $prePercentWidth: $container / 100px;
+    $percentWidth: $size / $prePercentWidth;
+    width: $percentWidth;
+}
