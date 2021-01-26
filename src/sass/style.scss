@@ -5,34 +5,3 @@
     margin: 0;
     box-sizing: border-box;
 }
-
-$maxWidth: 1900px; // for adaptive fonts
-
-$container: 1500px; // container width
-
-$containerFact: $container + 30px; // container with padding
-
-.wrapper {
-    display: flex;
-    flex-direction: column;
-}
-.content {
-    display: flex;
-    flex-direction: column;
-}
-
-.container {
-    max-width: $containerFact;
-    margin: auto;
-    padding: 0 15px;
-}
-
-.row {
-    display: flex;
-    align-items: center;
-}
-
-footer {
-    display: flex;
-    flex-direction: column;
-}

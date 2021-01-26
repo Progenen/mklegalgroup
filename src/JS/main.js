@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+    
     let menu = document.querySelector('.burger-menu');
     let menuBody = document.querySelector('.menu__body');
 
@@ -24,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     }
+
     ibg();
 
 });
