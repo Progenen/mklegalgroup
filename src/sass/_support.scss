@@ -1,16 +1,41 @@
-.ibg{
+@function str-replace($string, $search, $replace: "") {
 
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: relative;
+    $index: str-index($string, $search);
+  
+    @if $index {
+      @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+    }
+  
+    @return $string;
+  }
+  
+  @mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+    $src: null;
+  
+    $extmods: (
+      eot: "?",
+      svg: "#" + str-replace($name, " ", "_")
+    );
+  
+    $formats: (
+      otf: "opentype",
+      ttf: "truetype"
+    );
+  
+    @each $ext in $exts {
+      $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+      $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+      $src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+    }
+  
+    @font-face {
+      font-family: quote($name);
+      font-weight: $weight;
+      font-style: $style;
+  
+      // font-display: block;
+      src: $src;
+    }
 }
-.ibg .ibg-src{
-    width: 0;
-    height: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    visibility: hidden;
-}
+
+@include font-face('Montserrat', '/app/fonts/Montserrat/Montserrat-Bold', bold, normal, woff2 woff ttf eot svg);
