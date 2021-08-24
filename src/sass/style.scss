@@ -1,54 +1,208 @@
+@import 'bootstrap';
 @import 'support';
+@import 'fonts';
+
 
 *{
-    font-family: 'Quicksand';
-    font-weight: 500;
+    font-family: 'AvanteInt';
+    font-weight: 400;
 }
-$container: 1201px + 30px;
+
+body {
+    color: #080b34;
+    overflow-x: hidden !important;
+    display: flex;
+    flex-direction: column;
+}
+
+html, body {
+    height: 100%;
+}
 
 .wrapper {
-    display: flex;
-    flex-direction: column;
+    flex: 1 0 auto;
 }
-.content {
-    display: flex;
-    flex-direction: column;
+.footer {
+flex-shrink: 0;
 }
 
-.container {
-    max-width: $container;
-    margin: auto;
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+.btn {
     width: 100%;
-    padding: 0 15px;
-}
+    max-width: 270px;
+    height: 68px;
+    line-height: 68px;
+    display: block;
+    text-align: center;
+    color: #171718;
+    text-transform: uppercase;
+    font-size: 21px;
+    border: none;
+    font-weight: 700;
+    border-radius: 40px;
+    text-decoration: none;
+    transition: .5s;
+    &:hover {
+        color: inherit;
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 
-.row {
-    display: flex;
-}
-
-.column {
-    flex: 0 1;
-}
-
-footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-html {
-    font-size: 14px;
-    @media (max-width:1000px){
-        font-size: 12px;
-    }
-
-    @media (max-width:600px){
-        font-size: 10px;
     }
 }
-body {
-    overflow-x: hidden;
-    &.lock {
-        overflow-y: hidden
+
+p {
+    font-size: 20px;
+    line-height: 32px;
+    font-weight: 700;
+}
+
+h1, h2, h3, h4, h5 {
+    margin: 0;
+}
+
+.main-subtitle {
+    color: #080b34;
+    font-size: 26px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 7.2px;
+}
+.main-title {
+    color: #080b34;
+    font-size: 58px;
+    margin: 35px 0 0 0;
+    font-weight: 700;
+    line-height: 58px;
+    letter-spacing: 0.8px;
+}
+
+@media (max-width:577px){
+
+    .btn {
+        max-width: 180px;
+        max-height: 38px;
+        font-size: 15px;
+        line-height: 38px 
+    }
+
+    .main-subtitle {
+        font-size: 16px;
+    }
+
+    .main-title {
+        font-size: 32px;
+        line-height: 34px;
+        margin: 10px 0 0 0;
+    }
+
+    p {
+        font-size: 14px;
+        line-height: 22px;
+    }
+}
+
+.order-a {
+    order: 1;
+    @media (max-width:1200px){
+        order: 0;
+    }
+}
+
+.order-b {
+    @media (max-width:1200px){
+        order: 1;
+    }
+}
+
+
+
+@import 'news-page';
+@import 'news-item-page';
+@import 'header';
+@import 'offer';
+@import 'about';
+@import 'contacts';
+@import 'footer';
+
+
+// About-page
+
+.about-page__title {
+    text-align: center;
+    margin: 0 0 40px 0;
+}
+
+.about-page {
+    margin: 60px 0 90px 0;
+    img {
+        margin: 10px 0 10px 0;
+    }
+}
+
+// Contacts-page
+
+.contacts-page {
+
+    
+}
+.contacts-page {
+    margin: 60px 0 0 0;
+
+		&__inf {
+            display: flex;
+            color: inherit;
+            align-items: flex-end;
+            flex-direction: column;
+            text-align: left;
+            font-weight: 700;
+		}
+
+		&__label {
+            font-size: 32px;
+            margin: 0 20px 0 0;
+            text-align: left;
+            display: flex;
+            font-weight: 700;
+		}
+
+		&__phone {
+            font-size: 32px;
+            font-weight: 700;
+            text-align: left;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            justify-content: center;
+		}
+
+        &__form {
+            max-width: 500px;
+            margin: auto;
+        }
+
+        &__list {
+            width: 100%;
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+            align-items: flex-start;
+            list-style: none;
+            padding: 0 0 15px 0;
+        }
+    
+        &__title {
+            text-align: center;
+            margin: 0 0 30px 0;
+        }
+}
+.contacts-page-list {
+
+    &__item {
+        margin: 20px 0 0 0;
+        display: flex;
     }
 }

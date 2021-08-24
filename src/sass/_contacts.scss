@@ -1,0 +1,96 @@
+.contacts {
+    background-color: #fcfcff;
+    padding: 20px 0;
+    .row {
+        align-items: center;
+    }
+
+    &__subtitle {
+        text-align: left;
+    }
+
+    &__title {
+        text-align: left;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        margin: 48px 0 0 0;
+        input {
+            padding: 18px 17px;
+            margin: 24px 0 0 0;
+            border: 1px solid #6a697f;
+        }
+        input::placeholder {
+            /* Style for "фИО" */
+            color: #4d4b4b;
+            font-size: 21px;
+            font-weight: 700;
+            font-style: normal;
+            letter-spacing: normal;
+            line-height: 32px;
+            text-align: left;
+            text-transform: uppercase;
+        }
+    }
+
+    &__btn {
+        background-image: linear-gradient(-160deg, #0c2442 0%, #4f7492 100%);
+        color: #fff;
+        margin: 50px 0 0 0;
+        &:hover {
+            color: #fff;
+        }
+    }
+
+    &__article {
+        background-image: url('../images/graphics/bg/descr.webp');
+        background-size: auto;
+        background-repeat: no-repeat;
+        background-position: center;
+        padding: 30px 80px;
+        height: 789px;
+    }
+
+    &__text {
+        color: #000000;
+        font-size: 22px;
+        font-weight: 700;
+        margin: 40px 0 0 0;
+        line-height: 36px;
+        text-align: left;
+        font-style: normal;
+        letter-spacing: -0.72px;
+        line-height: normal;
+    }
+
+    @media (max-width:1400px){
+        &__article {
+            padding: 30px 40px;
+        }
+
+        &__text {
+            font-size: 20px;
+        }
+    }
+
+    @media (max-width:992px){
+        &__text {
+            font-size: 22px;
+            margin: 20px auto 0 auto;
+            max-width: 460px;
+            font-size: 18px;
+        }
+    }
+
+    @media (max-width:414px){
+        &__article {
+            padding: 30px 20px;
+        }
+        
+        &__text {
+            font-size: 16px;
+        }
+    }
+}
